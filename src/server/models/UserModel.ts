@@ -1,21 +1,13 @@
 import { DataTypes, Model, ModelAttributes } from "sequelize";
 import { IUser } from "../../common/interfaces/IUser";
+import { emailRegexp } from "../../common/utils/validateEmail";
 
 /**
  * Модель "Пользователь"
  */
 export class UserModel extends Model implements IUser {
-  /**
-   * ID пользователя
-   */
   id: number;
-  /**
-   * Признак того, что пользователь поделился в соц. сетях
-   */
   shared: boolean;
-  /**
-   * Email
-   */
   email: string;
 }
 
@@ -35,6 +27,9 @@ export const userAttributes: ModelAttributes<UserModel> = {
   email: {
     type: DataTypes.STRING,
     allowNull: true,
+    validate: {
+      is: emailRegexp,
+    },
   },
 };
 

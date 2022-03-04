@@ -1,16 +1,15 @@
-import "core-js/es7/reflect";
+import "reflect-metadata";
 import { createExpressServer } from "routing-controllers";
+import { SERVER_PORT } from "../common/constants";
 import { UserController } from "./controllers/UserController";
 import { initServer } from "./initServer";
-import env from "../../env.json";
 
 initServer();
 
 const app = createExpressServer({
   controllers: [UserController],
-  middlewares: [initServer],
 });
 
-app.listen(env.serverPort, () => {
+app.listen(SERVER_PORT, () => {
   console.log("Server was started");
 });
