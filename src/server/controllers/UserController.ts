@@ -50,33 +50,6 @@ export class UserController {
   }
 
   /**
-   * Получить информацию о пользователе по id
-   *
-   * @param {number} id - id пользователя
-   * @returns {Promise<IServerResponse<IUser>>}
-   */
-  @Get("/get/:id")
-  async getUser(@Param("id") id: number): Promise<IServerResponse<IUser>> {
-    try {
-      const user = await UserModel.findByPk(id);
-
-      if (!user) {
-        throw new Error(`Can't find a User with id ${id}`);
-      }
-
-      return {
-        error: false,
-        body: user.toJSON(),
-      };
-    } catch (e) {
-      return {
-        error: true,
-        message: e.message,
-      };
-    }
-  }
-
-  /**
    * Удалить пользователя по id
    *
    * @param {number} id - id пользователя
