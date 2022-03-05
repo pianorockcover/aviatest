@@ -10,6 +10,7 @@ export const FieldWrapper = styled.div<FieldWrapperProps>`
   opacity: ${({ disabled }: FieldWrapperProps) => (disabled ? 0.7 : 1)};
   position: relative;
   width: 400px;
+  margin-bottom: 25px;
   max-width: 100%;
 
   &:after {
