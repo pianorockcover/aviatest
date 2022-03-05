@@ -63,14 +63,15 @@ export const useUserData = (): UseUserDataReturns => {
             type: UPDATE_USER_ACTION_TYPE,
             payload: data.body,
           });
-          if (data.body.email && data.body.shared) {
-            dispatch({
-              type: SET_SCREEN_ACTION_TYPE,
-              payload: {
-                type: ScreenType.final,
-              },
-            });
-          }
+          dispatch({
+            type: SET_SCREEN_ACTION_TYPE,
+            payload: {
+              type:
+                data.body.email && data.body.shared
+                  ? ScreenType.final
+                  : ScreenType.form,
+            },
+          });
           setUserData(undefined);
         }
       })

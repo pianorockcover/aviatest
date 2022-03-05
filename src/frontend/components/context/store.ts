@@ -10,14 +10,13 @@ export enum ScreenType {
 
 export interface AppStore {
   user: IUser;
-  screenType: ScreenType;
+  screenType?: ScreenType;
 }
 
 /**
  * Начальное значение состояния приложения
  */
 export const initialStore: AppStore = {
-  screenType: ScreenType.form,
   user: {
     id: 1,
     email: null,

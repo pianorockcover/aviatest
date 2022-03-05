@@ -12,7 +12,7 @@ export const Layout: FC = () => {
 
   return store.screenType === ScreenType.form ? (
     <Form syncStore={syncStore} />
-  ) : (
+  ) : store.screenType === ScreenType.final ? (
     <Final />
-  );
+  ) : null;
 };
