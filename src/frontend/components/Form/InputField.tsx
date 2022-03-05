@@ -6,9 +6,10 @@ interface InputFieldProps {
 
 export const InputField = styled.input<InputFieldProps>`
   border: none;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-family: ${({ theme }) => theme.fonts.main};
   outline: none;
-  color: #333;
+  color: #545454;
   padding: 15px 30px;
   border-radius: 50px;
   max-width: 100%;

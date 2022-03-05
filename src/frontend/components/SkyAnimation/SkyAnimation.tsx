@@ -1,5 +1,5 @@
 import { random } from "lodash";
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { Cloud } from "../icons/Cloud";
 import { SkyAnimationWrapper, SkyCloud } from "./styles";
 
@@ -24,7 +24,7 @@ const getRandomPoint = () => {
 /**
  * Компонент для анимации облаков
  */
-export const SkyAnimation: FC = () => (
+const SkyAnimationComponent: FC = () => (
   <SkyAnimationWrapper>
     {clouds.map((_, i) => (
       <SkyCloud
@@ -42,3 +42,5 @@ export const SkyAnimation: FC = () => (
     ))}
   </SkyAnimationWrapper>
 );
+
+export const SkyAnimation = memo(SkyAnimationComponent);

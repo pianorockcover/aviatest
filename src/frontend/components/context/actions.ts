@@ -8,7 +8,7 @@ export const UPDATE_USER_ACTION_TYPE = "UPDATE_USER_ACTION";
  */
 type UpdateReducerAction = {
   type: typeof UPDATE_USER_ACTION_TYPE;
-  payload: IUser;
+  payload: Partial<IUser>;
 };
 
 export const SET_SCREEN_ACTION_TYPE = "SET_SCREEN_ACTION";

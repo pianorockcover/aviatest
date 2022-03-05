@@ -17,7 +17,10 @@ export const reducer = (store: AppStore, action: Actions) => {
     case UPDATE_USER_ACTION_TYPE:
       return {
         ...store,
-        ...action.payload,
+        user: {
+          ...store?.user,
+          ...action.payload,
+        },
       };
     case SET_SCREEN_ACTION_TYPE: {
       return {

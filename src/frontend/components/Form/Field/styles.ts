@@ -13,6 +13,9 @@ export const FieldWrapper = styled.div<FieldWrapperProps>`
   margin-bottom: 25px;
   max-width: 100%;
 
+  pointer-events: ${({ disabled }: FieldWrapperProps) =>
+    disabled ? "none" : "auto"};
+
   &:after {
     content: " ";
     position: absolute;

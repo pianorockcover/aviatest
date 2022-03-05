@@ -7,6 +7,7 @@ import { initServer } from "./initServer";
 initServer();
 
 const app = createExpressServer({
+  cors: true,
   controllers: [UserController],
 });
 
