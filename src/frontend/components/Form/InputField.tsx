@@ -13,4 +13,9 @@ export const InputField = styled.input<InputFieldProps>`
   padding: 15px 30px;
   border-radius: 50px;
   max-width: 100%;
+
+  &,
+  &:disabled {
+    background: #ffffff;
+  }
 `;

@@ -9,8 +9,8 @@ import {
 } from "../context/actions";
 import { ScreenType } from "../context/store";
 import { Reload } from "../icons/Reload";
-import { Traveller } from "../icons/Traveller";
 import { host } from "../Layout/useUserData";
+import { Loader } from "../Loader/Loader";
 import {
   FinalSubTitle,
   FinalTitle,
@@ -54,9 +54,7 @@ export const Final: FC = () => {
   }, []);
   return (
     <>
-      <TravellerIconWrapper>
-        <Traveller />
-      </TravellerIconWrapper>
+      <TravellerIconWrapper />
       <FinalWrapper>
         <FinalSubTitle>выборы</FinalSubTitle>
         <FinalTitle>
@@ -64,7 +62,7 @@ export const Final: FC = () => {
           близко!
         </FinalTitle>
         {isLoading ? (
-          "Загрузка..."
+          <Loader>Загрузка...</Loader>
         ) : (
           <ReloadButton onClick={removeUser}>
             <Reload />

@@ -39,7 +39,10 @@ const config = {
       inject: "body",
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "static/fonts", to: "fonts" }],
+      patterns: [
+        { from: "static/fonts", to: "fonts" },
+        { from: "static/img", to: "img" },
+      ],
     }),
   ],
   devServer: {

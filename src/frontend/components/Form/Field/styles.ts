@@ -9,8 +9,7 @@ export const FieldWrapper = styled.div<FieldWrapperProps>`
   align-items: flex-start;
   opacity: ${({ disabled }: FieldWrapperProps) => (disabled ? 0.7 : 1)};
   position: relative;
-  width: 400px;
-  margin-bottom: 25px;
+  margin-bottom: 1.4em;
   max-width: 100%;
 
   pointer-events: ${({ disabled }: FieldWrapperProps) =>
@@ -32,7 +31,7 @@ export const FieldWrapper = styled.div<FieldWrapperProps>`
 
 export const FieldLabel = styled.div`
   font-size: 1em;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
   user-select: none;
 `;
 

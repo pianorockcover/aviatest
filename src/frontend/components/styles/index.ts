@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -9,7 +10,20 @@ export const GlobalStyles = createGlobalStyle`
   html {
     height: 100%;
     margin: 0;
-    font-family: Nunito;
+    font-family: ${({ theme }) => theme.fonts.main};
+    min-width: 300px;
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.small}px) {
+    body {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (min-width: ${theme.breakpoints.medium}px) {
+    body {
+      font-size: 17px;
+    }
   }
 `;
 

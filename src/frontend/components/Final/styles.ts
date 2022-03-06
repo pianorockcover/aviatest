@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../styles/theme";
 
 export const FinalWrapper = styled.div`
   position: relative;
@@ -16,19 +17,24 @@ export const FinalSubTitle = styled.div`
 export const FinalTitle = styled.div`
   font-family: ${({ theme }) => theme.fonts.extra};
   font-size: 4em;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   line-height: 1.3;
 `;
 
 export const TravellerIconWrapper = styled.div`
   position: absolute;
-  top: -25px;
+  top: 0;
   left: 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
   height: 100%;
+  background-image: url(img/pants.svg);
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 export const ReloadButton = styled.button`

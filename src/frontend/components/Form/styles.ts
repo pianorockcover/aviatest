@@ -5,7 +5,7 @@ export const FormTitle = styled.div`
   text-align: center;
   line-height: 1.2;
   font-size: 3em;
-  margin-bottom: 25px;
+  margin-bottom: 1.2em;
 `;
 
 export const FormWrapper = styled.div`

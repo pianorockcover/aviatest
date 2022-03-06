@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { SERVER_PORT } from "../../../common/constants";
 import { IServerResponse } from "../../../common/interfaces/IServerResponse";
 import { IUser } from "../../../common/interfaces/IUser";
@@ -37,11 +37,11 @@ export interface UseUserDataReturns {
 export const useUserData = (): UseUserDataReturns => {
   const [fetchKey, setFetchKey] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>();
-  const [userData, setUserData] = useState<IUser>();
+  const userData = useRef<IUser>();
 
-  const syncStore = useCallback((userData?: IUser) => {
+  const syncStore = useCallback((nextUserData?: IUser) => {
     setFetchKey((value) => value + 1);
-    setUserData(userData);
+    userData.current = nextUserData;
   }, []);
 
   const { store, dispatch } = useContext(AppContext);
@@ -52,7 +52,7 @@ export const useUserData = (): UseUserDataReturns => {
     axios
       .post<IServerResponse<IUser>>(
         `${host}/user/update/1`,
-        fetchKey === 0 ? {} : { ...store.user, ...(userData || {}) },
+        fetchKey === 0 ? {} : { ...store.user, ...(userData.current || {}) },
         axiosConfig
       )
       .then(({ data }) => {
@@ -72,7 +72,7 @@ export const useUserData = (): UseUserDataReturns => {
                   : ScreenType.form,
             },
           });
-          setUserData(undefined);
+          userData.current = undefined;
         }
       })
       .catch((e) => console.error(e.message))

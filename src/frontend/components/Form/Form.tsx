@@ -54,12 +54,6 @@ export const Form: FC<FormProps> = ({ syncStore }) => {
 
   const onSubmit = useCallback(() => {
     syncStore();
-    dispatch({
-      type: SET_SCREEN_ACTION_TYPE,
-      payload: {
-        type: ScreenType.final,
-      },
-    });
   }, []);
 
   return (

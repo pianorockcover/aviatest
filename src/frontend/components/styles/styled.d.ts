@@ -14,5 +14,9 @@ declare module "styled-components" {
       main: string;
       extra: string;
     };
+    breakpoints: {
+      small: number;
+      medium: number;
+    };
   }
 }
