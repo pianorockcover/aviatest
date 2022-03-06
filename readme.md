@@ -18,6 +18,6 @@ npm run start-client
 
 ## База
 
-В качестве бд использовал https://api.elephantsql.com/ строка коннекта лежит в файле src\common\constants.ts
+В качестве бд использовал https://elephantsql.com/ строка коннекта лежит в файле src\common\constants.ts
 
 <b>Приложение умеет делать миграции, дамп базы не нужен</b>
