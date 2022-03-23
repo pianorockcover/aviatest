@@ -32,4 +32,4 @@ export interface TagManagerArgs {
   dataLayerName?: string | undefined;
 }
 
-export type DataLayerArgs = Pick<TagManagerArgs, "dataLayer" | "dataLayerName">;
+export type DataLayerPushArgs = Pick<TagManagerArgs, "dataLayer">;

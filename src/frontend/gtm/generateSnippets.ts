@@ -18,15 +18,15 @@ type GenerateSnippetsReturnValue = {
  * @returns {GenerateSnippetsReturnValue} html elements for snippets
  */
 export const generateSnippets = ({
-  gtmId,
   auth,
   dataLayerName,
-  events,
+  events = {},
   gmtServerUrl,
+  gtmId,
   preview,
 }: TagManagerArgs): GenerateSnippetsReturnValue => {
-  const gtmAuth = `&gtm_auth=${auth}`;
-  const gtmPreview = `&gtm_preview=${preview}`;
+  const gtmAuth = auth ?? `&gtm_auth=${auth}`;
+  const gtmPreview = preview ?? `&gtm_preview=${preview}`;
 
   const iframe = `
       <iframe src="${gmtServerUrl}/ns.html?id=${gtmId}${gtmAuth}${gtmPreview}&gtm_cookies_win=x"
