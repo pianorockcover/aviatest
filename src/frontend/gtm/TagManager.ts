@@ -60,7 +60,12 @@ export class TagManager {
       return;
     }
 
-    window[TagManager.dataLayerName] = window[TagManager.dataLayerName] || [];
+    if (!window[TagManager.dataLayerName]) {
+      console.warn(`Variable ${TagManager.dataLayerName} does not exists`);
+
+      return;
+    }
+
     window[TagManager.dataLayerName].push(dataLayer);
   }
 }
