@@ -1,4 +1,5 @@
 import React, { FC, useMemo, useReducer } from "react";
+import TagManager from "react-gtm-module";
 import { ThemeProvider } from "styled-components";
 import { AppContext } from "./context";
 import { reducer } from "./context/reducer";
@@ -14,6 +15,10 @@ import { theme } from "./styles/theme";
  * Основной компонент приложения
  */
 export const App: FC = () => {
+  TagManager.dataLayer({
+    dataLayer: { f: 4, g: 5 },
+    dataLayerName: "dataLayertest",
+  });
   const [store, dispatch] = useReducer(reducer, initialStore);
 
   const contextValue = useMemo(
