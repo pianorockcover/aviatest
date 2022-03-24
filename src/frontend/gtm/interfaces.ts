@@ -3,7 +3,7 @@
  */
 export interface TagManagerArgs {
   /**
-   * GTM id, must be something like GTM-000000.
+   * GTM id
    */
   gtmId: string;
   /**
@@ -23,7 +23,7 @@ export interface TagManagerArgs {
    */
   preview?: string | undefined;
   /**
-   * Object that contains all of the information that you want to pass to Google Tag Manager.
+   * Contains information to pass to GTM
    */
   dataLayer?: object | undefined;
   /**
